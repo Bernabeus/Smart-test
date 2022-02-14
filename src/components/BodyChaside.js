@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from "react";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import PreguntasCHASIDE from "@/components/PregTestChaside";
-import "@fontsource/montserrat";
-import style from "@/styles/Home.module.css";
-import { useRouter } from "next/router";
+import React, { useEffect, useState } from 'react';
+import Grid from '@material-ui/core/Grid';
+import PreguntasCHASIDE from '@/components/PregTestChaside';
+import style from '@/styles/Home.module.css';
+import { useRouter } from 'next/router';
 
-const useStyles = makeStyles((theme) => ({
-
-}));
-
-function BodyC({ arrayP }) {
-  const classes = useStyles();
-  const [dataPr, setDataPr] = useState([]);
-  const [dataPrN, setDataPrN] = useState([]);
+function BodyC() {
   const router = useRouter();
   const { id } = router.query;
 
-  useEffect(() => {
-
-  }, [id]);
-
-  async function newValue() {
-
-  }
+  useEffect(() => {}, [id]);
 
   return (
     <Grid className={style.body}>
@@ -31,9 +16,11 @@ function BodyC({ arrayP }) {
         <Grid>
           <PreguntasCHASIDE onChangeNumber={id} />
         </Grid>
-      ) : (id == 10) ? (
+      ) : id == 10 ? (
         <Grid />
-      ) : (<div />)}
+      ) : (
+        <div />
+      )}
     </Grid>
   );
 }
