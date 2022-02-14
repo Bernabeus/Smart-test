@@ -6,8 +6,9 @@ import styles from '@/styles/Home.module.css'
 import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "next/image";
-import  logoH from "../../public/images/logoHB.png";
+import  logoH from "../../../public/images/logoHB.png";
 import "@fontsource/montserrat";
+
 
 const useStyles = makeStyles((theme) => ({
   contB: {
@@ -61,9 +62,7 @@ export default function Home() {
         <Grid className={classes.contH}>
         <Header />
         </Grid>
-        <Grid className={classes.contB}>
-        <Body />
-        </Grid>
+        
       </main>
 
       <footer className={classes.footer}>

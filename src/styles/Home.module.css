@@ -4,18 +4,18 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
+  padding-top: 5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .footer {
+  background-color: #1B3F9D;
   display: flex;
+  left: 0;
   flex: 1;
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
@@ -115,3 +115,19 @@
     flex-direction: column;
   }
 }
+
+.body {
+  background-image: url("../../public/images/Fondo.png");
+  background-size: cover;
+  background-size: 35rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 4%;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+

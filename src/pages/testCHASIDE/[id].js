@@ -1,13 +1,15 @@
 import Head from 'next/head'
+import React, { useEffect, useState } from "react";
 import Header from '@/components/HeaderChaside'
 import Typography from '@material-ui/core/Typography';
-import Body from '@/components/BodyChaside';
+import BodyC from '@/components/BodyChaside';
 import styles from '@/styles/Home.module.css'
 import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "next/image";
-import  logoH from "../../public/images/logoHB.png";
+import  logoH from "../../../public/images/logoHB.png";
 import "@fontsource/montserrat";
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   contB: {
@@ -47,8 +49,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Home() {
-  const classes = useStyles();
+export default function testChaside() {
+    const classes = useStyles();
+    const router = useRouter();
+    const { id } = router.query;
+    const [numId, setNumId] = useState(0);
+
+    useEffect(() => {
+        authenUrl();
+      }, [id]);
+
+      async function authenUrl() {
+
+      };
+
   return (
     <div>
       <Head>
@@ -62,7 +76,7 @@ export default function Home() {
         <Header />
         </Grid>
         <Grid className={classes.contB}>
-        <Body />
+        <BodyC />
         </Grid>
       </main>
 

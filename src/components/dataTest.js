@@ -31,7 +31,7 @@ export const dataQ = [
     },
     {
         id: 6,
-        question: 'Cuando eras niño/a ¿Te interesaba saber cómo estaban construidos tusjuguetes?',
+        question: 'Cuando eras niño/a ¿Te interesaba saber cómo estaban construidos tus juguetes?',
         answer1: 'Si',
         answer2: 'No',
     },
@@ -487,7 +487,7 @@ export const dataQ = [
     },
     {
         id: 82,
-        question: '¿Dirigirías un grupo de teatroindependiente?',
+        question: '¿Dirigirías un grupo de teatro independiente?',
         answer1: 'Si',
         answer2: 'No',
     },
@@ -559,7 +559,7 @@ export const dataQ = [
     },
     {
         id: 94,
-        question: '¿El trabajo individual te resulta más rápido y efectivo que el trabajogrupal?',
+        question: '¿El trabajo individual te resulta más rápido y efectivo que el trabajo grupal?',
         answer1: 'Si',
         answer2: 'No',
     },
@@ -577,7 +577,7 @@ export const dataQ = [
     },
     {
         id: 97,
-        question: '¿Te gustaría trabajar como profesional dirigiendo la construcción de una empresahidroeléctrica?',
+        question: '¿Te gustaría trabajar como profesional dirigiendo la construcción de una empresa hidroeléctrica?',
         answer1: 'Si',
         answer2: 'No',
     },
