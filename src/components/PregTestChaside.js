@@ -192,27 +192,27 @@ function PreguntasCHASIDE() {
     arrayA.push(value10);
     const posFalt = arrayA.filter((element) => element);
 
-    if (id === 0 && posFalt.length !== 10) {
+    if (id == 0 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 1 && posFalt.length !== 10) {
+    } else if (id == 1 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 2 && posFalt.length !== 10) {
+    } else if (id == 2 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 3 && posFalt.length !== 10) {
+    } else if (id == 3 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 4 && posFalt.length !== 10) {
+    } else if (id == 4 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 5 && posFalt.length !== 10) {
+    } else if (id == 5 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 6 && posFalt.length !== 10) {
+    } else if (id == 6 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 7 && posFalt.length !== 10) {
+    } else if (id == 7 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 8 && posFalt.length !== 10) {
+    } else if (id == 8 && posFalt.length != 10) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 9 && posFalt.length !== 8) {
+    } else if (id == 9 && posFalt.length != 8) {
       window.alert('Responda todas las preguntas');
-    } else if (id === 9 && posFalt.length === 8) {
+    } else if (id == 9 && posFalt.length == 8) {
       const arrayB = [];
       arrayB.push(value1);
       arrayB.push(value2);
@@ -226,7 +226,7 @@ function PreguntasCHASIDE() {
       const arrayDN = arrayD.concat(arrayB);
       setDataPr(arrayDN);
     } else {
-      if (id === 0) {
+      if (id == 0) {
         setDataPr(arrayA);
       } else {
         const arrayD = dataPr;
@@ -282,173 +282,173 @@ function PreguntasCHASIDE() {
         arrayN[i][1] = val2;
       }
 
-      let cI = '';
-      let hI = '';
-      let aI = '';
-      let sI = '';
-      let iI = '';
-      let dI = '';
-      let eI = '';
-      let cA = '';
-      let hA = '';
-      let aA = '';
-      let sA = '';
-      let iA = '';
-      let dA = '';
-      let eA = '';
+      let cI = 0;
+      let hI = 0;
+      let aI = 0;
+      let sI = 0;
+      let iI = 0;
+      let dI = 0;
+      let eI = 0;
+      let cA = 0;
+      let hA = 0;
+      let aA = 0;
+      let sA = 0;
+      let iA = 0;
+      let dA = 0;
+      let eA = 0;
 
       for (let i = 0; i < arrayN.length; i++) {
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 98) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 12) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 64) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 53) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 85) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 1) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 78) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 20) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 71) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 91)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 98) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 12) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 64) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 53) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 85) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 1) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 78) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 20) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 71) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 91)
         ) {
           cI = ++cI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 9) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 34) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 80) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 25) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 95) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 67) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 41) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 74) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 56) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 89)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 9) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 34) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 80) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 25) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 95) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 67) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 41) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 74) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 56) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 89)
         ) {
           hI = ++hI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 21) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 45) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 96) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 57) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 28) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 11) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 50) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 3) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 81) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 36)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 21) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 45) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 96) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 57) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 28) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 11) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 50) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 3) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 81) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 36)
         ) {
           aI = ++aI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 33) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 92) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 70) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 8) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 87) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 62) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 23) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 44) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 16) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 52)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 33) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 92) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 70) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 8) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 87) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 62) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 23) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 44) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 16) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 52)
         ) {
           sI = ++sI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 75) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 6) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 19) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 38) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 60) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 27) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 83) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 54) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 47) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 97)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 75) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 6) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 19) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 38) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 60) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 27) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 83) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 54) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 47) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 97)
         ) {
           iI = ++iI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 84) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 31) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 48) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 73) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 5) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 65) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 14) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 37) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 58) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 24)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 84) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 31) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 48) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 73) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 5) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 65) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 14) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 37) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 58) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 24)
         ) {
           dI = ++dI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 77) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 42) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 88) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 17) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 93) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 32) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 68) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 49) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 35) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 61)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 77) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 42) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 88) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 17) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 93) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 32) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 68) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 49) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 35) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 61)
         ) {
           eI = ++eI;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 15) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 51) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 2) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 46)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 15) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 51) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 2) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 46)
         ) {
           cA = ++cA;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 63) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 30) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 72) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 86)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 63) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 30) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 72) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 86)
         ) {
           hA = ++hA;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 22) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 39) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 76) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 82)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 22) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 39) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 76) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 82)
         ) {
           aA = ++aA;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 69) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 40) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 29) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 4)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 69) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 40) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 29) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 4)
         ) {
           sA = ++sA;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 26) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 59) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 90) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 10)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 26) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 59) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 90) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 10)
         ) {
           iA = ++iA;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 13) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 66) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 18) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 43)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 13) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 66) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 18) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 43)
         ) {
           dA = ++dA;
         }
         if (
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 94) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 7) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 79) ||
-          (arrayN[i][1] === 'Si' && arrayN[i][0] === 55)
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 94) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 7) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 79) ||
+          (arrayN[i][1] == 'Si' && arrayN[i][0] == 55)
         ) {
           eA = ++eA;
         }
@@ -552,7 +552,7 @@ function PreguntasCHASIDE() {
   console.log(valConfidence);
   return (
     <Grid>
-      {valConfidence.length !== 0 ? (
+      {valConfidence.length != 0 ? (
         <Grid>
           <StyledChart data={valConfidence} className={classes.chart}>
             <ArgumentScale factory={scalePoint} />
@@ -583,7 +583,7 @@ function PreguntasCHASIDE() {
         </Grid>
       ) : (
         <Grid>
-          {dataPrN.length !== 0 ? (
+          {dataPrN.length != 0 ? (
             <Grid>
               <Grid className={classes.cont}>
                 <Grid className={classes.cont1}>
@@ -881,7 +881,7 @@ function PreguntasCHASIDE() {
                   </RadioGroup>
                 </Grid>
               </Grid>
-              {id !== 9 && dataPrN.length >= 8 ? (
+              {id != 9 && dataPrN.length >= 8 ? (
                 <Grid>
                   <Grid className={classes.cont}>
                     <Grid className={classes.cont1}>
@@ -962,7 +962,7 @@ function PreguntasCHASIDE() {
               ) : (
                 <div />
               )}
-              {id === 0 && dataPr.length === 0 ? (
+              {id == 0 && dataPr.length == 0 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -972,7 +972,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 1 && dataPr.length === 10 ? (
+              ) : id == 1 && dataPr.length == 10 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -982,7 +982,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 2 && dataPr.length === 20 ? (
+              ) : id == 2 && dataPr.length == 20 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -992,7 +992,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 3 && dataPr.length === 30 ? (
+              ) : id == 3 && dataPr.length == 30 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1002,7 +1002,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 4 && dataPr.length === 40 ? (
+              ) : id == 4 && dataPr.length == 40 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1012,7 +1012,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 5 && dataPr.length === 50 ? (
+              ) : id == 5 && dataPr.length == 50 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1022,7 +1022,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 6 && dataPr.length === 60 ? (
+              ) : id == 6 && dataPr.length == 60 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1032,7 +1032,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 7 && dataPr.length === 70 ? (
+              ) : id == 7 && dataPr.length == 70 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1042,7 +1042,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 8 && dataPr.length === 80 ? (
+              ) : id == 8 && dataPr.length == 80 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1052,7 +1052,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 9 && dataPr.length === 90 ? (
+              ) : id == 9 && dataPr.length == 90 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
@@ -1062,7 +1062,7 @@ function PreguntasCHASIDE() {
                     Siguiente ronda
                   </Button>
                 </Grid>
-              ) : id === 9 && dataPr.length === 98 ? (
+              ) : id == 9 && dataPr.length == 98 ? (
                 <Grid style={{ textAlign: 'center' }}>
                   <Button
                     variant="outlined"
