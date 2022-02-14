@@ -2,11 +2,11 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import firebase from "firebase/app";
-import 'firebase/auth'
-import 'firebase/firestore'
-import 'firebase/storage'
-import 'firebase/analytics'
-import 'firebase/performance'
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
+
+import "firebase/performance";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,24 +19,24 @@ const firebaseConfig = {
   storageBucket: "test-smart-4a805.appspot.com",
   messagingSenderId: "606884295373",
   appId: "1:606884295373:web:b375c3f233e89e80842f84",
-  measurementId: "G-T4WSJEJR5Q"
+  measurementId: "G-T4WSJEJR5Q",
 };
 
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
 export default function initFirebase() {
-    if (!firebase.apps.length) {
-        firebase.initializeApp(clientCredentials)
-        // Check that `window` is in scope for the analytics module!
-        if (typeof window !== 'undefined') {
-            // Enable analytics. https://firebase.google.com/docs/analytics/get-started
-            if ('measurementId' in clientCredentials) {
-                firebase.analytics()
-                firebase.performance()
-            }
-        }
-        console.log('Firebase was successfully init.')
+  if (!firebase.apps.length) {
+    firebase.initializeApp(clientCredentials);
+    // Check that `window` is in scope for the analytics module!
+    if (typeof window !== "undefined") {
+      // Enable analytics. https://firebase.google.com/docs/analytics/get-started
+      if ("measurementId" in clientCredentials) {
+        firebase.analytics();
+        firebase.performance();
+      }
     }
+    console.log("Firebase was successfully init.");
+  }
 }

@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "next/image";
-import  logoH from "../../public/images/logoH.png";
+import logoH from "../../public/images/logoH.png";
 import "@fontsource/montserrat";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,26 +16,26 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: "100%",
     boxShadow: "0px 0px 6px 0px",
-    zIndex: 3
+    zIndex: 3,
   },
   text: {
     fontFamily: "Montserrat",
     color: "#1C2E93",
-    [theme.breakpoints.up('xs')]: {
-        fontSize: '5vw'
-      },
-      [theme.breakpoints.up('sm')]: {
-          fontSize: '4vw'
-      },
-      [theme.breakpoints.up('md')]: {
-        fontSize: '3vw'
+    [theme.breakpoints.up("xs")]: {
+      fontSize: "5vw",
     },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '2.5vw'
-  }
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "4vw",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "3vw",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "2.5vw",
+    },
   },
   cont1: {
-    textAlign: "center"
+    textAlign: "center",
   },
 }));
 
@@ -44,20 +44,18 @@ export default function HeaderC() {
   return (
     <Grid className={classes.header}>
       <Grid item xs className={classes.cont1}>
-        <Image 
-        src={logoH} 
-        height={100} 
-        width={130} 
+        <Image
+          src={logoH}
+          height={100}
+          width={130}
         />
       </Grid>
       <Grid item xs={8} className={classes.cont2}>
-      <Typography variant="h5" className={classes.text}>
-      Test de Orientación Vocacional CHASIDE
-      </Typography>
+        <Typography variant="h5" className={classes.text}>
+          Test de Orientación Vocacional CHASIDE
+        </Typography>
       </Grid>
-      <Grid item xs={2}>
-
-      </Grid>
+      <Grid item xs={2} />
     </Grid>
   );
 }

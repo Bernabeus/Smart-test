@@ -16,7 +16,7 @@ export default function MyApp(props) {
   }, []);
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>Tests</title>
         <meta
@@ -24,11 +24,11 @@ export default function MyApp(props) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <Component {...pageProps} />
-        </ThemeProvider>
-    </React.Fragment>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }
 

@@ -1,5 +1,7 @@
 import React from "react";
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, {
+  Head, Html, Main, NextScript,
+} from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 import { ServerStyleSheet } from "styled-components";
 
@@ -8,8 +10,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          {/*/!* PWA primary color *!/*/}
-          {/*<meta name="theme-color" content={theme.palette.primary.main} />*/}
+          {/* /!* PWA primary color *!/ */}
+          {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -57,12 +59,10 @@ MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
 
   try {
-    ctx.renderPage = () =>
-      originalRenderPage({
-        // eslint-disable-next-line
-        enhanceApp: (App) => (props) =>
-          sheet.collectStyles(sheets.collect(<App {...props} />)), // eslint-disable-line react/display-name
-      });
+    ctx.renderPage = () => originalRenderPage({
+      // eslint-disable-next-line
+        enhanceApp: (App) => (props) => sheet.collectStyles(sheets.collect(<App {...props} />)), // eslint-disable-line react/display-name
+    });
 
     const initialProps = await Document.getInitialProps(ctx);
 
