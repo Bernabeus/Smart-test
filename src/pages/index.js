@@ -4,7 +4,6 @@ import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import Body from '@/components/BodyChaside';
 import Header from '@/components/HeaderChaside';
 import logoH from '../../public/images/logoHB.png';
 import '@fontsource/montserrat';
