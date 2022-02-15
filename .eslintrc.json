@@ -1,9 +1,23 @@
 {
     "env": {
-        "browser": true
+        "browser": true,
+        "es2021": true
     },
     "extends": [
-        "peerigon/presets/prettier-typescript.js"
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
-    "root": true
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+    }
 }
