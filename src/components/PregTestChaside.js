@@ -8,19 +8,8 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import '@fontsource/montserrat';
 import { useRouter } from 'next/router';
+import BodyRC from '@/components/BodyRChaside';
 
-import {
-  Chart,
-  ArgumentAxis,
-  ValueAxis,
-  LineSeries,
-  Title,
-  Legend,
-} from '@devexpress/dx-react-chart-material-ui';
-import { styled } from '@mui/material/styles';
-import { ArgumentScale, Animation } from '@devexpress/dx-react-chart';
-import { curveCatmullRom, line } from 'd3-shape';
-import { scalePoint } from 'd3-scale';
 import { dataQ } from '@/components/DataTest.js';
 
 const useStyles = makeStyles((theme) => ({
@@ -124,6 +113,47 @@ function PreguntasCHASIDE() {
   }, [id]);
 
   async function newArray(data) {
+    /*
+    const confidence = [
+      {
+        letter: 'C',
+        Intereses: 7,
+        Aptitudes: 3,
+      },
+      {
+        letter: 'H',
+        Intereses: 2,
+        Aptitudes: 1,
+      },
+      {
+        letter: 'A',
+        Intereses: 3,
+        Aptitudes: 0,
+      },
+      {
+        letter: 'S',
+        Intereses: 5,
+        Aptitudes: 2,
+      },
+      {
+        letter: 'I',
+        Intereses: 6,
+        Aptitudes: 2,
+      },
+      {
+        letter: 'D',
+        Intereses: 7,
+        Aptitudes: 1,
+      },
+      {
+        letter: 'E',
+        Intereses: 6,
+        Aptitudes: 1,
+      },
+    ];
+
+    setValConfidence(confidence);
+*/
     let num = id;
     num *= 10;
     let num1 = 0;
@@ -496,90 +526,11 @@ function PreguntasCHASIDE() {
     } catch (error) {}
   }
 
-  function Line(props) {
-    return (
-      <LineSeries.Path
-        {...props}
-        path={line()
-          .x(({ arg }) => arg)
-          .y(({ val }) => val)
-          .curve(curveCatmullRom)}
-      />
-    );
-  }
-
-  const StyledDiv = styled('div')(() => ({
-    [`&.${classes.title}`]: {
-      textAlign: 'center',
-      width: '100%',
-      marginBottom: '10px',
-    },
-  }));
-
-  function Text({ text }) {
-    const [mainText, subText] = text.split('\\n');
-    return (
-      <StyledDiv className={classes.title}>
-        <Typography component="h3" variant="h5">
-          {mainText}
-        </Typography>
-        <Typography variant="subtitle1">{subText}</Typography>
-      </StyledDiv>
-    );
-  }
-
-  function Root(props) {
-    return (
-      <Legend.Root
-        {...props}
-        sx={{ display: 'flex', margin: 'auto', flexDirection: 'row' }}
-      />
-    );
-  }
-  function Label(props) {
-    return <Legend.Label {...props} sx={{ mb: 1, whiteSpace: 'nowrap' }} />;
-  }
-  function Item(props) {
-    return <Legend.Item {...props} sx={{ flexDirection: 'column-reverse' }} />;
-  }
-
-  const StyledChart = styled(Chart)(() => ({
-    [`&.${classes.chart}`]: {
-      paddingRight: '30px',
-    },
-  }));
-
-  console.log(valConfidence);
   return (
     <Grid>
-      {valConfidence.length != 0 ? (
+      {valConfidence.length == 7 ? (
         <Grid>
-          <StyledChart data={valConfidence} className={classes.chart}>
-            <ArgumentScale factory={scalePoint} />
-            <ArgumentAxis />
-            <ValueAxis />
-
-            <LineSeries
-              name="Intereses"
-              valueField="Intereses"
-              argumentField="letter"
-              seriesComponent={Line}
-            />
-            <LineSeries
-              name="Aptitudes"
-              valueField="Aptitudes"
-              argumentField="letter"
-              seriesComponent={Line}
-            />
-            <Legend
-              position="bottom"
-              rootComponent={Root}
-              itemComponent={Item}
-              labelComponent={Label}
-            />
-            <Title text="Resultado" textComponent={Text} />
-            <Animation />
-          </StyledChart>
+          <BodyRC arrayC={valConfidence} />
         </Grid>
       ) : (
         <Grid>

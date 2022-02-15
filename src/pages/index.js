@@ -4,13 +4,13 @@ import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import Header from '@/components/HeaderChaside';
+import Header from '@/components/HeaderF';
 import logoH from '../../public/images/logoHB.png';
 import '@fontsource/montserrat';
+import BodyF from '@/components/BodyFormulario';
 
 const useStyles = makeStyles((theme) => ({
   contB: {
-    // paddingTop: 100,
     left: 0,
   },
   footer: {
@@ -62,7 +62,9 @@ export default function Home() {
         <Grid className={classes.contH}>
           <Header />
         </Grid>
-        <Grid className={classes.contB}></Grid>
+        <Grid className={classes.contB}>
+          <BodyF />
+        </Grid>
       </main>
 
       <footer className={classes.footer}>
@@ -74,7 +76,7 @@ export default function Home() {
             variant="h6"
             style={{ color: '#fff', fontFamily: 'Montserrat' }}
           >
-            Test de Orientación Vocacional CHASIDE
+            Capacitación Total
           </Typography>
         </Grid>
         <Grid item xs={3} style={{ paddingRight: 10 }}>
