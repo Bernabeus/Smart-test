@@ -17,9 +17,12 @@ const schema = yup.object().shape({
   apellido: yup.string().required('Este campo es obligatorio'),
   nombre: yup.string().required('Este campo es obligatorio'),
   colegio: yup.string().required('Este campo es obligatorio'),
-  paralelo: yup.string().required('Este campo es obligatorio'),
-  numEstudiante: yup.string().required('Este campo es obligatorio'),
-  numRepresentante: yup.string().required('Este campo es obligatorio'),
+  paralelo: yup
+    .string()
+    .max(1, 'Solo se debe escribir una letra')
+    .required('Este campo es obligatorio'),
+  numEstudiante: yup.number().required('Este campo es obligatorio'),
+  numRepresentante: yup.number().required('Este campo es obligatorio'),
   carreras: yup.string().required('Este campo es obligatorio'),
   email: yup
     .string()
@@ -75,20 +78,9 @@ function BodyC() {
   const classes = useStyles();
   const [result, setResult] = useState('');
   const router = useRouter();
-  const [value, setValue] = useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
-  const [valuesR, setValuesR] = useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
+  const [helperText, setHelperText] = React.useState('Choose wisely');
+  const [value, setValue] = useState('');
+
   const [errorsList, setErrorsList] = useState([]);
   const {
     handleSubmit,
@@ -106,12 +98,20 @@ function BodyC() {
       const userData = {
         ...formData,
       };
-
-      console.log(value);
-      userData['curso'] = value;
-
-      console.log(userData);
-      router.push('/testCHASIDE/0');
+      var ap = userData['apellido'];
+      ap = ap.toUpperCase();
+      userData['apellido'] = ap;
+      var no = userData['nombre'];
+      no = no.toUpperCase();
+      userData['nombre'] = no;
+      var par = userData['paralelo'];
+      par = par.toUpperCase();
+      userData['paralelo'] = par;
+      if (value) {
+        userData['curso'] = value;
+        console.log(userData);
+        router.push('/testCHASIDE/0');
+      }
     } catch (e) {
       const { response } = e;
       setResult('Ocurrió un error :(');
@@ -131,6 +131,11 @@ function BodyC() {
   const handleRadioChange = (event) => {
     setValue(event.target.value);
   };
+
+  function mayus(e) {
+    e.value = e.value.toUpperCase();
+  }
+
   return (
     <Grid className={style.body}>
       <Grid style={{ display: 'flex' }}>
@@ -152,7 +157,7 @@ function BodyC() {
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
                   <Typography variant="h5" className={classes.textT}>
-                    Apellidos (INGRESA SOLO LETRAS MAYÚSCULAS):
+                    Apellidos:
                   </Typography>
                 </Grid>
                 <Controller
@@ -164,17 +169,17 @@ function BodyC() {
                     <TextField
                       {...field}
                       className={classes.textfield}
-                      label=""
+                      label="Apellido"
                       variant="filled"
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>{errors.apellido?.message}</p>
+                <p style={{ color: '#fffb0e' }}>{errors.apellido?.message}</p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
                   <Typography variant="h5" className={classes.textT}>
-                    Nombres (INGRESA SOLO LETRAS MAYÚSCULAS):
+                    Nombres:
                   </Typography>
                 </Grid>
                 <Controller
@@ -191,7 +196,7 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>{errors.nombre?.message}</p>
+                <p style={{ color: '#fffb0e' }}>{errors.nombre?.message}</p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -213,7 +218,7 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>{errors.colegio?.message}</p>
+                <p style={{ color: '#fffb0e' }}>{errors.colegio?.message}</p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -228,7 +233,6 @@ function BodyC() {
                   defaultValue=""
                   render={({ field }) => (
                     <RadioGroup
-                      {...field}
                       defaultValue=""
                       style={{ paddingLeft: 60, paddingBottom: 10 }}
                       value={value}
@@ -236,6 +240,7 @@ function BodyC() {
                       name="customized-radios"
                     >
                       <FormControlLabel
+                        {...field}
                         value={`Segundo`}
                         control={<Radio />}
                         label={
@@ -277,7 +282,7 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>{errors.paralelo?.message}</p>
+                <p style={{ color: '#fffb0e' }}>{errors.paralelo?.message}</p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -294,12 +299,13 @@ function BodyC() {
                     <TextField
                       {...field}
                       className={classes.textfield}
+                      type="number"
                       label=""
                       variant="filled"
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>
+                <p style={{ color: '#fffb0e' }}>
                   {errors.numEstudiante?.message}
                 </p>
               </Grid>
@@ -318,12 +324,13 @@ function BodyC() {
                     <TextField
                       {...field}
                       className={classes.textfield}
+                      type="number"
                       label=""
                       variant="filled"
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>
+                <p style={{ color: '#fffb0e' }}>
                   {errors.numRepresentante?.message}
                 </p>
               </Grid>
@@ -331,7 +338,8 @@ function BodyC() {
                 <Grid style={{ paddingBottom: 15 }}>
                   <Typography variant="h5" className={classes.textT}>
                     ¿Cuáles son tus tres profesiones de mayor preferencia?
-                    Escríbelas en orden de preferencia:
+                    Escríbelas en orden de preferencia (Las profesiones deben
+                    estar separadas por una coma):
                   </Typography>
                 </Grid>
                 <Controller
@@ -348,7 +356,7 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>{errors.carreras?.message}</p>
+                <p style={{ color: '#fffb0e' }}>{errors.carreras?.message}</p>
               </Grid>
               <Grid item={true} style={{ paddingBottom: 15 }}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -371,7 +379,7 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#ff0000' }}>{errors.email?.message}</p>
+                <p style={{ color: '#fffb0e' }}>{errors.email?.message}</p>
               </Grid>
 
               <p style={{ color: '#fff' }}>{result}</p>
