@@ -107,10 +107,13 @@ function BodyC() {
       var par = userData['paralelo'];
       par = par.toUpperCase();
       userData['paralelo'] = par;
+
       if (value) {
         userData['curso'] = value;
         console.log(userData);
         router.push('/testCHASIDE/0');
+      } else {
+        window.alert('Seleccione un curso');
       }
     } catch (e) {
       const { response } = e;
@@ -157,7 +160,7 @@ function BodyC() {
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
                   <Typography variant="h5" className={classes.textT}>
-                    Apellidos:
+                    Apellidos (INGRESA SOLO LETRAS MAYÚSCULAS):
                   </Typography>
                 </Grid>
                 <Controller
@@ -169,7 +172,7 @@ function BodyC() {
                     <TextField
                       {...field}
                       className={classes.textfield}
-                      label="Apellido"
+                      label=""
                       variant="filled"
                     />
                   )}
@@ -179,7 +182,7 @@ function BodyC() {
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
                   <Typography variant="h5" className={classes.textT}>
-                    Nombres:
+                    Nombres (INGRESA SOLO LETRAS MAYÚSCULAS):
                   </Typography>
                 </Grid>
                 <Controller
@@ -265,7 +268,7 @@ function BodyC() {
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
                   <Typography variant="h5" className={classes.textT}>
-                    Paralelo:
+                    Paralelo (INGRESA SOLO UNA LETRA MAYÚSCULA):
                   </Typography>
                 </Grid>
                 <Controller
