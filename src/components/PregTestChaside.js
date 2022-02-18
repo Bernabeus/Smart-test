@@ -106,6 +106,7 @@ function PreguntasCHASIDE() {
 
   const router = useRouter();
   const { id } = router.query;
+  const { dataUser } = router.query;
   const [value10, setValue10] = useState(0);
 
   useEffect(() => {
@@ -113,8 +114,7 @@ function PreguntasCHASIDE() {
   }, [id]);
 
   async function newArray(data) {
-    /*
-    const confidence = [
+    /*const confidence = [
       {
         letter: 'C',
         Intereses: 7,
@@ -152,8 +152,8 @@ function PreguntasCHASIDE() {
       },
     ];
 
-    setValConfidence(confidence);
-*/
+    setValConfidence(confidence);*/
+
     let num = id;
     num *= 10;
     let num1 = 0;
@@ -284,9 +284,10 @@ function PreguntasCHASIDE() {
       setValue8('');
       setValue9('');
       setValue10('');
-      // <BodyC onChangeArray={arrayA} />
-      router.push(`/testCHASIDE/${++id}`);
-      // location.replace(`/testCHASIDE/${++id}`);
+      router.push({
+        pathname: `/testCHASIDE/${++id}`,
+        query: { dataUser: dataUser },
+      });
     }
   }
 
@@ -524,6 +525,13 @@ function PreguntasCHASIDE() {
 
       setValConfidence(confidence);
     } catch (error) {}
+  }
+
+  function RegreInicio() {
+    router.push({
+      pathname: `/testCHASIDE/0`,
+      query: { dataUser: dataUser },
+    });
   }
 
   return (
@@ -1033,10 +1041,12 @@ function PreguntasCHASIDE() {
                 </Grid>
               ) : (
                 <Grid style={{ textAlign: 'center' }}>
-                  <Button variant="outlined" className={classes.button}>
-                    <a href={`/testCHASIDE/${0}`}>
-                      Regresar al principio del cuestionario
-                    </a>
+                  <Button
+                    variant="outlined"
+                    className={classes.button}
+                    onClick={() => RegreInicio()}
+                  >
+                    Regresar al principio del cuestionario
                   </Button>
                 </Grid>
               )}

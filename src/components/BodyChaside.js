@@ -14,7 +14,7 @@ function BodyC() {
     <Grid className={style.body}>
       {id <= 9 ? (
         <Grid>
-          <PreguntasCHASIDE onChangeNumber={id} />
+          <PreguntasCHASIDE />
         </Grid>
       ) : id == 10 ? (
         <Grid />

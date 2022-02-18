@@ -19,7 +19,7 @@ const schema = yup.object().shape({
   colegio: yup.string().required('Este campo es obligatorio'),
   paralelo: yup
     .string()
-    .max(1, 'Solo se debe escribir una letra')
+    .max(1, 'Solo se debe escribir una letra en mayúscula')
     .required('Este campo es obligatorio'),
   numEstudiante: yup.number().required('Este campo es obligatorio'),
   numRepresentante: yup.number().required('Este campo es obligatorio'),
@@ -107,11 +107,15 @@ function BodyC() {
       var par = userData['paralelo'];
       par = par.toUpperCase();
       userData['paralelo'] = par;
+      var arrayUserData = JSON.stringify(userData);
 
       if (value) {
         userData['curso'] = value;
-        console.log(userData);
-        router.push('/testCHASIDE/0');
+        //console.log(userData);
+        router.push({
+          pathname: '/testCHASIDE/0',
+          query: { dataUser: arrayUserData },
+        });
       } else {
         window.alert('Seleccione un curso');
       }
@@ -134,10 +138,6 @@ function BodyC() {
   const handleRadioChange = (event) => {
     setValue(event.target.value);
   };
-
-  function mayus(e) {
-    e.value = e.value.toUpperCase();
-  }
 
   return (
     <Grid className={style.body}>
@@ -253,6 +253,7 @@ function BodyC() {
                         }
                       />
                       <FormControlLabel
+                        {...field}
                         value={`Tercero`}
                         control={<Radio />}
                         label={

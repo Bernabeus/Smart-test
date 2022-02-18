@@ -141,7 +141,7 @@ export const dataQ = [
   },
   {
     id: 22,
-    question: '¿Crees que los detalles son tan importantes como el todo?',
+    question: '¿Crees que los detalles en tu vida cotidiana son importantes?',
     answer1: 'Si',
     answer2: 'No',
   },
@@ -211,8 +211,7 @@ export const dataQ = [
   },
   {
     id: 33,
-    question:
-      '¿Participarías en una campaña de prevención contra el mal de Chagas?',
+    question: '¿Participarías en una campaña de prevención contra el VIH SIDA?',
     answer1: 'Si',
     answer2: 'No',
   },

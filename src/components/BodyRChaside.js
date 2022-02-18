@@ -24,6 +24,8 @@ import { ArgumentScale, Animation } from '@devexpress/dx-react-chart';
 import { curveCatmullRom, line } from 'd3-shape';
 import { scalePoint } from 'd3-scale';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { writeUserData } from './initFirebase';
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -76,11 +78,12 @@ const BodyRC = (props) => {
   const [confidence, setConfidence] = useState([]);
   const [rowsC, setRowsC] = useState([]);
   const [value, setValue] = useState(0);
+  const router = useRouter();
+  const { dataUser } = router.query;
 
   useEffect(() => {
     recArray();
-  }, [confidence]);
-  console.log(confidence);
+  }, [confidence, dataUser]);
 
   async function recArray() {
     setConfidence(props.arrayC);
@@ -159,7 +162,100 @@ const BodyRC = (props) => {
     },
   }));
 
-  function saveR() {}
+  const saveR = () => {
+    saveData();
+  };
+
+  //Firebase
+  function saveData() {
+    var arrayN = JSON.parse(dataUser);
+    const cIn = {
+      CIntereses: rowsC[0].Intereses,
+    };
+    const hIn = {
+      HIntereses: rowsC[1].Intereses,
+    };
+    const aIn = {
+      AIntereses: rowsC[2].Intereses,
+    };
+    const sIn = {
+      SIntereses: rowsC[3].Intereses,
+    };
+    const iIn = {
+      IIntereses: rowsC[4].Intereses,
+    };
+    const dIn = {
+      DIntereses: rowsC[5].Intereses,
+    };
+    const eIn = {
+      EIntereses: rowsC[6].Intereses,
+    };
+    const cAp = {
+      CAptitudes: rowsC[0].Aptitudes,
+    };
+    const hAp = {
+      HAptitudes: rowsC[1].Aptitudes,
+    };
+    const aAp = {
+      AAptitudes: rowsC[2].Aptitudes,
+    };
+    const sAp = {
+      SAptitudes: rowsC[3].Aptitudes,
+    };
+    const iAp = {
+      IAptitudes: rowsC[4].Aptitudes,
+    };
+    const dAp = {
+      DAptitudes: rowsC[5].Aptitudes,
+    };
+    const eAp = {
+      EAptitudes: rowsC[6].Aptitudes,
+    };
+
+    arrayN = Object.assign(
+      arrayN,
+      cIn,
+      hIn,
+      aIn,
+      sIn,
+      iIn,
+      dIn,
+      eIn,
+      cAp,
+      hAp,
+      aAp,
+      sAp,
+      iAp,
+      dAp,
+      eAp
+    ); /*
+    writeUserData(
+      arrayN.apellido,
+      arrayN.nombre,
+      arrayN.colegio,
+      arrayN.curso,
+      arrayN.paralelo,
+      arrayN.numEstudiante,
+      arrayN.numRepresentante,
+      arrayN.carreras,
+      arrayN.email,
+      arrayN.CIntereses,
+      arrayN.HIntereses,
+      arrayN.AIntereses,
+      arrayN.SIntereses,
+      arrayN.IIntereses,
+      arrayN.DIntereses,
+      arrayN.EIntereses,
+      arrayN.CAptitudes,
+      arrayN.HAptitudes,
+      arrayN.AAptitudes,
+      arrayN.SAptitudes,
+      arrayN.IAptitudes,
+      arrayN.DAptitudes,
+      arrayN.EAptitudes
+    );*/
+    router.push('/');
+  }
 
   return (
     <Grid className={style.body}>
@@ -233,15 +329,8 @@ const BodyRC = (props) => {
                 className={classes.button}
                 onClick={() => saveR()}
               >
-                Guardar resultados
+                Guardar resultados y salir
               </Button>
-            </Grid>
-            <Grid className={classes.contBu}>
-              <Link href="/">
-                <Button variant="outlined" className={classes.button}>
-                  Regresar a la página inicial
-                </Button>
-              </Link>
             </Grid>
           </Grid>
         </Grid>
