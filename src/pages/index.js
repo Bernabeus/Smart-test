@@ -55,7 +55,6 @@ export default function Home() {
           name="description"
           content="Test de orientación vocacional CHASIDE"
         />
-        <link rel="icon" href="/logo.ico" />
       </Head>
 
       <main className={styles.main}>

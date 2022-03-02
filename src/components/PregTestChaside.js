@@ -117,7 +117,7 @@ function PreguntasCHASIDE() {
     /*const confidence = [
       {
         letter: 'C',
-        Intereses: 7,
+        Intereses: 0,
         Aptitudes: 3,
       },
       {
@@ -132,7 +132,7 @@ function PreguntasCHASIDE() {
       },
       {
         letter: 'S',
-        Intereses: 5,
+        Intereses: 8,
         Aptitudes: 2,
       },
       {
@@ -143,12 +143,12 @@ function PreguntasCHASIDE() {
       {
         letter: 'D',
         Intereses: 7,
-        Aptitudes: 1,
+        Aptitudes: 3,
       },
       {
         letter: 'E',
         Intereses: 6,
-        Aptitudes: 1,
+        Aptitudes: 0,
       },
     ];
 

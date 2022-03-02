@@ -12,22 +12,29 @@ import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import CodText from './CodText';
 
 const schema = yup.object().shape({
-  apellido: yup.string().required('Este campo es obligatorio'),
-  nombre: yup.string().required('Este campo es obligatorio'),
-  colegio: yup.string().required('Este campo es obligatorio'),
+  apellido: yup.string().required('Este campo es obligatorio.'),
+  nombre: yup.string().required('Este campo es obligatorio.'),
+  colegio: yup.string().required('Este campo es obligatorio.'),
   paralelo: yup
     .string()
-    .max(1, 'Solo se debe escribir una letra en mayúscula')
-    .required('Este campo es obligatorio'),
-  numEstudiante: yup.number().required('Este campo es obligatorio'),
-  numRepresentante: yup.number().required('Este campo es obligatorio'),
-  carreras: yup.string().required('Este campo es obligatorio'),
+    .max(1, 'Solo se debe escribir una letra en mayúscula.')
+    .required('Este campo es obligatorio.'),
+  numEstudiante: yup
+    .string()
+    .max(10, 'Solo se puede ingresar un número valido.')
+    .required('Este campo es obligatorio.'),
+  numRepresentante: yup
+    .string()
+    .max(9, 'Solo se puede ingresar un número valido.')
+    .required('Este campo es obligatorio.'),
+  carreras: yup.string().required('Este campo es obligatorio.'),
   email: yup
     .string()
-    .email('Ingrese un correo válido')
-    .required('Este campo es obligatorio'),
+    .email('Ingrese un correo válido.')
+    .required('Este campo es obligatorio.'),
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -77,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
 function BodyC() {
   const classes = useStyles();
   const [result, setResult] = useState('');
+  const [dataIU, setDataIU] = useState([]);
   const router = useRouter();
   const [helperText, setHelperText] = React.useState('Choose wisely');
   const [value, setValue] = useState('');
@@ -92,8 +100,6 @@ function BodyC() {
   });
 
   const onSubmit = async (formData) => {
-    //setUserInfo(null);
-    //setResult('Enviando los datos...');
     try {
       const userData = {
         ...formData,
@@ -111,7 +117,6 @@ function BodyC() {
 
       if (value) {
         userData['curso'] = value;
-        //console.log(userData);
         router.push({
           pathname: '/testCHASIDE/0',
           query: { dataUser: arrayUserData },
@@ -177,7 +182,9 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>{errors.apellido?.message}</p>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
+                  {errors.apellido?.message}
+                </p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -199,7 +206,9 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>{errors.nombre?.message}</p>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
+                  {errors.nombre?.message}
+                </p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -221,7 +230,9 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>{errors.colegio?.message}</p>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
+                  {errors.colegio?.message}
+                </p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -286,7 +297,9 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>{errors.paralelo?.message}</p>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
+                  {errors.paralelo?.message}
+                </p>
               </Grid>
               <Grid item={true}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -302,14 +315,14 @@ function BodyC() {
                   render={({ field }) => (
                     <TextField
                       {...field}
-                      className={classes.textfield}
                       type="number"
+                      className={classes.textfield}
                       label=""
                       variant="filled"
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
                   {errors.numEstudiante?.message}
                 </p>
               </Grid>
@@ -334,7 +347,7 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
                   {errors.numRepresentante?.message}
                 </p>
               </Grid>
@@ -360,7 +373,9 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>{errors.carreras?.message}</p>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
+                  {errors.carreras?.message}
+                </p>
               </Grid>
               <Grid item={true} style={{ paddingBottom: 15 }}>
                 <Grid style={{ paddingBottom: 15 }}>
@@ -383,7 +398,9 @@ function BodyC() {
                     />
                   )}
                 />
-                <p style={{ color: '#fffb0e' }}>{errors.email?.message}</p>
+                <p style={{ color: '#fff000', fontWeight: '600' }}>
+                  {errors.email?.message}
+                </p>
               </Grid>
 
               <p style={{ color: '#fff' }}>{result}</p>
@@ -395,14 +412,16 @@ function BodyC() {
                   ))}
                 </ul>
               )}
-
-              <Button
-                type="submit"
-                variant="outlined"
-                className={classes.button}
-              >
-                Empezar el test
-              </Button>
+              <Grid style={{ paddingBottom: 30 }}>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  className={classes.button}
+                >
+                  Empezar el test
+                </Button>
+              </Grid>
+              <CodText />
             </Grid>
           </form>
         </Grid>

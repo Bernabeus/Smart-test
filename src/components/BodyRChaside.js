@@ -23,9 +23,10 @@ import { styled } from '@mui/material/styles';
 import { ArgumentScale, Animation } from '@devexpress/dx-react-chart';
 import { curveCatmullRom, line } from 'd3-shape';
 import { scalePoint } from 'd3-scale';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { writeUserData } from './initFirebase';
+import { writeFireData, writeUserData } from './initFirebase';
+import Image from 'next/image';
+import logoH from '../../public/images/codigoQR.png';
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -130,8 +131,8 @@ const BodyRC = (props) => {
     return (
       <StyledDiv className={classes.title}>
         <Typography
-          component="h3"
-          variant="h5"
+          component="h2"
+          variant="h4"
           style={{ color: '#1C2E93', fontFamily: 'Montserrat' }}
         >
           {mainText}
@@ -228,7 +229,7 @@ const BodyRC = (props) => {
       iAp,
       dAp,
       eAp
-    ); /*
+    );
     writeUserData(
       arrayN.apellido,
       arrayN.nombre,
@@ -253,7 +254,7 @@ const BodyRC = (props) => {
       arrayN.IAptitudes,
       arrayN.DAptitudes,
       arrayN.EAptitudes
-    );*/
+    );
     router.push('/');
   }
 
@@ -292,7 +293,7 @@ const BodyRC = (props) => {
           <Grid style={{ paddingRight: 100, paddingLeft: 100 }}>
             <Grid style={{ paddingBottom: 10 }}>
               <Typography variant="h5" className={classes.text}>
-                Tabla de respuestas
+                Tabla de respuestas.
               </Typography>
             </Grid>
             <Grid>
@@ -320,6 +321,17 @@ const BodyRC = (props) => {
                   </TableBody>
                 </Table>
               </TableContainer>
+            </Grid>
+          </Grid>
+          <Grid style={{ paddingBottom: 10, paddingTop: 30 }}>
+            <Grid>
+              <Typography variant="h5" className={classes.text}>
+                Escanea el siguiente código QR para visualizar la oferta
+                académica.
+              </Typography>
+            </Grid>
+            <Grid style={{ textAlign: 'center', paddingTop: 20 }}>
+              <Image src={logoH} height={180} width={180} />
             </Grid>
           </Grid>
           <Grid>
