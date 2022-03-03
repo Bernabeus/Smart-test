@@ -107,6 +107,7 @@ const CodText = () => {
           </Button>
           <TextField
             id="textC"
+            type="password"
             className={classes.textfield}
             label=""
             variant="filled"
