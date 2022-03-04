@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     // fontWeight: "600",
     // color: "#fff",
     [theme.breakpoints.up('xs')]: {
-      fontSize: '5vw',
+      fontSize: '4.5vw',
     },
     [theme.breakpoints.up('sm')]: {
       fontSize: '4vw',
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '600',
     color: '#1C2E93',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '5vw',
+      fontSize: '4.5vw',
     },
     [theme.breakpoints.up('sm')]: {
       fontSize: '4vw',
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#1C2E93',
     fontWeight: '600',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '5vw',
+      fontSize: '4vw',
     },
     [theme.breakpoints.up('sm')]: {
       fontSize: '3.5vw',

@@ -259,7 +259,7 @@ const BodyRC = (props) => {
   }
 
   return (
-    <Grid className={style.body}>
+    <Grid>
       {confidence ? (
         <Grid>
           <Grid>

@@ -11,7 +11,7 @@ function BodyC() {
   useEffect(() => {}, [id]);
 
   return (
-    <Grid className={style.body}>
+    <Grid className={style.bodyF}>
       {id <= 9 ? (
         <Grid>
           <PreguntasCHASIDE />

@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '600',
     textAlign: 'left',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '5vw',
+      fontSize: '3vw',
     },
     [theme.breakpoints.up('sm')]: {
       fontSize: '2vw',
@@ -150,7 +150,7 @@ function BodyC() {
         <Grid item xs></Grid>
         <Grid
           item
-          xs={6}
+          xs={8}
           style={{
             border: '1px solid',
             paddingTop: 30,
