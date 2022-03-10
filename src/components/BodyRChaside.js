@@ -170,6 +170,27 @@ const BodyRC = (props) => {
   //Firebase
   function saveData() {
     var arrayN = JSON.parse(dataUser);
+
+    var arrayI = [];
+    var arrayA = [];
+    for (var i = 0; i < rowsC.length; i++) {
+      arrayI.push(rowsC[i].Intereses);
+      arrayA.push(rowsC[i].Aptitudes);
+    }
+    const maxVI = Math.max(...arrayI);
+    const maxVA = Math.max(...arrayA);
+    const posI = arrayI.indexOf(maxVI);
+    const posA = arrayA.indexOf(maxVA);
+
+    const maxValueI = rowsC[posI].letter + ' en Intereses con ' + maxVI;
+    const maxValueA = rowsC[posA].letter + ' en Aptitudes con ' + maxVA;
+
+    const MaxIn = {
+      MaxIntereses: maxValueI,
+    };
+    const MaxAp = {
+      MaxAptitudes: maxValueA,
+    };
     const cIn = {
       CIntereses: rowsC[0].Intereses,
     };
@@ -215,6 +236,8 @@ const BodyRC = (props) => {
 
     arrayN = Object.assign(
       arrayN,
+      MaxAp,
+      MaxIn,
       cIn,
       hIn,
       aIn,
@@ -240,6 +263,8 @@ const BodyRC = (props) => {
       arrayN.numRepresentante,
       arrayN.carreras,
       arrayN.email,
+      arrayN.MaxIntereses,
+      arrayN.MaxAptitudes,
       arrayN.CIntereses,
       arrayN.HIntereses,
       arrayN.AIntereses,

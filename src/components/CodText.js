@@ -85,6 +85,7 @@ const CodText = () => {
     for (var i = 0; i < arreglo.length; i++) {
       userArray.push(arreglo[i][1]);
     }
+
     setDataIU(userArray);
   };
 
@@ -139,13 +140,24 @@ const CodText = () => {
                   <ExcelColumn label="Colegio" value="colegio" />
                   <ExcelColumn label="Curso" value="curso" />
                   <ExcelColumn label="Paralelo" value="paralelo" />
-                  <ExcelColumn label="NumEstudiante" value="numEstudiante" />
                   <ExcelColumn
-                    label="NumRepresentante"
+                    label="Número del Estudiante"
+                    value="numEstudiante"
+                  />
+                  <ExcelColumn
+                    label="Número del Representante"
                     value="numRepresentante"
                   />
-                  <ExcelColumn label="CarrerasFav" value="carreras" />
+                  <ExcelColumn label="Carreras Favoritas" value="carreras" />
                   <ExcelColumn label="Email" value="email" />
+                  <ExcelColumn
+                    label="Valor máximo del Interes"
+                    value="maxIntereses"
+                  />
+                  <ExcelColumn
+                    label="Valor máximo de la Aptitud"
+                    value="maxAptitudes"
+                  />
                   <ExcelColumn label="CIntereses" value="CIntereses" />
                   <ExcelColumn label="HIntereses" value="HIntereses" />
                   <ExcelColumn label="AIntereses" value="AIntereses" />
@@ -159,7 +171,7 @@ const CodText = () => {
                   <ExcelColumn label="SAptitudes" value="SAptitudes" />
                   <ExcelColumn label="IAptitudes" value="IAptitudes" />
                   <ExcelColumn label="DAptitudes" value="DAptitudes" />
-                  <ExcelColumn label="DAptitudes" value="DAptitudes" />
+                  <ExcelColumn label="EAptitudes" value="EAptitudes" />
                 </ExcelSheet>
               </ExcelFile>
             ) : (
