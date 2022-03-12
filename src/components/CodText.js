@@ -48,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
   textfield: {
     color: '#113163',
     background: '#fff',
-    //width: '80%',
+    marginLeft: 20,
+    paddingLeft: 10,
   },
   button: {
     backgroundColor: '#fff',
@@ -70,7 +71,7 @@ const CodText = () => {
   const getValue = () => {
     const inputValue = document.getElementById('textC').value;
 
-    if (inputValue == 'Smart-2022') {
+    if (inputValue == 'CHASIDE-Smart22') {
       setBtnDisa(true);
     }
   };
@@ -111,7 +112,6 @@ const CodText = () => {
             type="password"
             className={classes.textfield}
             label=""
-            variant="filled"
           />
         </Grid>
       </Grid>

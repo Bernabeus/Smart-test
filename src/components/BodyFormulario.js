@@ -12,7 +12,6 @@ import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import CodText from './CodText';
 
 const schema = yup.object().shape({
   apellido: yup.string().required('Este campo es obligatorio.'),
@@ -421,7 +420,6 @@ function BodyC() {
                   Empezar el test
                 </Button>
               </Grid>
-              <CodText />
             </Grid>
           </form>
         </Grid>
