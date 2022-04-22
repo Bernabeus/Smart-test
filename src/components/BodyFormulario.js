@@ -27,7 +27,7 @@ const schema = yup.object().shape({
     .required('Este campo es obligatorio.'),
   numRepresentante: yup
     .string()
-    .max(9, 'Solo se puede ingresar un número valido.')
+    .max(10, 'Solo se puede ingresar un número valido.')
     .required('Este campo es obligatorio.'),
   carreras: yup.string().required('Este campo es obligatorio.'),
   email: yup
@@ -252,6 +252,16 @@ function BodyC() {
                       onChange={handleRadioChange}
                       name="customized-radios"
                     >
+                      <FormControlLabel
+                        {...field}
+                        value={`Décimo`}
+                        control={<Radio />}
+                        label={
+                          <Typography variant="h5" className={classes.textT}>
+                            Décimo
+                          </Typography>
+                        }
+                      />
                       <FormControlLabel
                         {...field}
                         value={`Segundo`}
